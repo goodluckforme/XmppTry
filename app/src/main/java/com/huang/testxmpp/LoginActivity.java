@@ -128,8 +128,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                 switch (msg.what) {
                     case 1:
                         // 群聊，加入聊天室，并且监听聊天室消息
-                        initGroupChatManager();
-
+//                        initGroupChatManager();
                         loginBt.setText("登录成功");
                         startActivity(new Intent(LoginActivity.this, MainActivity.class));
 //                        finish();

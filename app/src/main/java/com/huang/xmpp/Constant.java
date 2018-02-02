@@ -6,7 +6,7 @@ package com.huang.xmpp;
  */
 
 public class Constant {
-    public static String OPENFIRE_IP = "192.168.10.105";
+    public static String OPENFIRE_IP = "192.168.10.111";
     public static String OPENFIRE_NAME = "pc-201702141128";
     public static int OPENFIRE_PORT = 5222;
 

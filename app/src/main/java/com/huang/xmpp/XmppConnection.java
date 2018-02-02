@@ -364,7 +364,7 @@ public class XmppConnection {
                 return null;
             }
             try {
-                VCardManager.getInstanceFor(getConnection()).loadVCard(
+                vcard=      VCardManager.getInstanceFor(getConnection()).loadVCard(
                         JidCreate.entityBareFrom(user + "@" + getConnection().getServiceName()));
             } catch (XmppStringprepException | SmackException | InterruptedException | XMPPException.XMPPErrorException e) {
                 e.printStackTrace();
@@ -544,7 +544,7 @@ public class XmppConnection {
             return false;
         try {
             VCard vcard = new VCard();
-            vcard.load(getConnection());
+            vcard.load(getConnection(),JidCreate.entityBareFrom("much" + "@" + getConnection().getServiceName()));
 
             byte[] bytes;
 
@@ -726,7 +726,6 @@ public class XmppConnection {
             // 使用XMPPConnection创建一个MultiUserChat窗口
             MultiUserChat muc = MultiUserChatManager.getInstanceFor(getConnection()).getMultiUserChat(
                     JidCreate.entityBareFrom(roomsName + "@conference." + getConnection().getServiceName()));
-
             // 用户加入聊天室
             muc.join(Resourcepart.from(user));
 

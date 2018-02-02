@@ -9,6 +9,7 @@ public class HostedRoomBean {
     private String roomName;// 聊天室名称
 
     public HostedRoomBean() {
+
     }
 
     public HostedRoomBean(String roomName) {

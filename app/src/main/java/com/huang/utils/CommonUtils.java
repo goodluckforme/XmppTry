@@ -1,6 +1,7 @@
 package com.huang.utils;
 
 import android.content.Context;
+import android.content.res.AssetManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -79,7 +80,26 @@ public class CommonUtils {
 //        ImageLoader.getInstance().displayImage(imageUri, iv,
 //                ImageLoaderUtils_circle.MyDisplayImageOptions());
     }
+    /**
+     * 从Assets中读取图片
+     */
+    public static Bitmap getImageFromAssetsFile(Context mContext,String fileName)
+    {
+        Bitmap image = null;
+        AssetManager am = mContext.getAssets();
+        try
+        {
+            InputStream is = am.open(fileName);
+            image = BitmapFactory.decodeStream(is);
+            is.close();
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
 
+        return image;
+    }
     /**
      * 检查sd卡是否插上
      *
